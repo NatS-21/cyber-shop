@@ -1,0 +1,13 @@
+<div class="input-container">
+  <label *ngIf="label" class="secondary">{{ label }}</label>
+  <div class="input-wrapper"
+       [ngClass]="{ 'has-button': buttonLabel, 'has-eye-icon': isSecure, 'error': errorMessage, 'small': size === 'small', 'large': size === 'large' }">
+    <input [type]="inputType" [placeholder]="placeholder" [(ngModel)]="value" (ngModelChange)="onInputChange($event)"
+           [attr.min]="type === 'number' ? minValue : null" [attr.max]="type === 'number' ? maxValue : null">
+    <button *ngIf="isSecure" type="button" class="eye-button" (click)="togglePasswordVisibility()">
+      <img ngSrc="assets/icons/Eye.svg" alt="Toggle Password" height="24" width="24">
+    </button>
+    <button *ngIf="buttonLabel" type="button" class="action-button secondary">{{ buttonLabel }}</button>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>

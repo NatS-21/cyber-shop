@@ -1,0 +1,21 @@
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--color-dark-tertiary);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-image 0.3s ease, background-color 0.3s ease;
+}
+
+.checkbox.checked {
+  width: 20px;
+  height: 20px;
+  background-image: url("/assets/icons/CheckBox.svg");
+  background-size: 20px 20px;
+  border-width: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+}

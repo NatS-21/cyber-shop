@@ -1,0 +1,22 @@
+<div class="pagination">
+  <button (click)="goToPreviousPage()" [disabled]="currentPage === 1" class="control">
+    <span>&lt;</span>
+  </button>
+
+  <button *ngIf="currentPage > 3" (click)="goToPage(1)" class="secondary">1</button>
+  <button *ngIf="currentPage > 4" class="dots">...</button>
+
+  <button *ngFor="let page of getVisiblePages()"
+          [ngClass]="{ 'active': currentPage === page }"
+          (click)="goToPage(page)"
+          class="secondary">
+    {{ page }}
+  </button>
+
+  <button *ngIf="currentPage < totalPages - 3" class="dots">...</button>
+  <button *ngIf="currentPage < totalPages - 2" (click)="goToPage(totalPages)" class="secondary">{{ totalPages }}</button>
+
+  <button (click)="goToNextPage()" [disabled]="currentPage === totalPages" class="control">
+    <span>&gt;</span>
+  </button>
+</div>

@@ -1,0 +1,42 @@
+<section class="products-page-container">
+  <aside class="filters-panel desktop-only">
+    <app-filter-section *ngFor="let section of filterSections"
+                        [title]="section"
+                        [categories]="filters[section]"
+                        (filterChange)="onFilterChange($event)"></app-filter-section>
+  </aside>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <app-button iconName="Filters" type='settings' size="small" class="filter-toggle mobile-only"
+                  (click)="toggleFilter()">
+        Filters
+      </app-button>
+      <div class="selected-products secondary desktop-only">
+        Selected Products: <span class="count">{{ filteredProducts.length }}</span>
+      </div>
+      <div class="sort-dropdown">
+        <app-dropdown [options]="sortOptions" placeholder="By rating" (optionSelected)="onSortChange($event)"></app-dropdown>
+      </div>
+    </div>
+    <div class="selected-products secondary mobile-only">
+      Selected Products: <span class="count">{{ filteredProducts.length }}</span>
+    </div>
+    <div class="products-grid">
+      <app-product-card *ngFor="let product of shownProducts" [product]="product"></app-product-card>
+    </div>
+
+    <app-pagination [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-pagination>
+  </div>
+
+  <div class="mobile-filter-panel" *ngIf="isFilterOpen">
+    <div class="filter-header">
+      <div class="filter-title">Filters</div>
+      <div class="filter-close" (click)="toggleFilter()">Close</div>
+    </div>
+    <app-filter-section *ngFor="let section of filterSections"
+                        [title]="section"
+                        [categories]="filters[section]"
+                        (filterChange)="onFilterChange($event)"></app-filter-section>
+  </div>
+</section>

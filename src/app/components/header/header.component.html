@@ -1,0 +1,42 @@
+<header class="header-container">
+  <div class="top-section">
+    <div class="logo-container">
+      <img src="assets/icons/LogoBlack.svg" alt="Logo" class="logo" (click)="navigateTo('')">
+    </div>
+    <div class="search-container desktop-only">
+      <app-search-field
+        [placeholder]="'Search'"
+        [searchTerm]="searchTerm"
+        (searchTermChange)="onSearchTermChange($event)">
+      </app-search-field>
+      <div class="dropdown" *ngIf="showDropdown">
+        <app-product-list-item *ngFor="let product of searchResults" [product]="product"></app-product-list-item>
+      </div>
+    </div>
+    <div class="nav-container desktop-only">
+      <nav>
+        <img src="assets/icons/Favorites.svg" alt="Favorites" class="nav-icon" (click)="navigateTo('favorites')">
+        <img src="assets/icons/Cart.svg" alt="Cart" class="nav-icon" (click)="navigateTo('shopping_cart')">
+      </nav>
+    </div>
+    <div class="burger-menu mobile-only" (click)="toggleMenu()">
+      <img src="assets/icons/Burger.svg" alt="Menu">
+    </div>
+  </div>
+  <div class="mobile-menu" *ngIf="isMenuOpen">
+    <nav>
+      <img src="assets/icons/Favorites.svg" alt="Favorites" class="nav-icon" (click)="navigateTo('favorites')">
+      <img src="assets/icons/Cart.svg" alt="Cart" class="nav-icon" (click)="navigateTo('shopping_cart')">
+    </nav>
+    <div class="search-container">
+      <app-search-field
+        [placeholder]="'Search'"
+        [searchTerm]="searchTerm"
+        (searchTermChange)="onSearchTermChange($event)">
+      </app-search-field>
+      <div class="dropdown" *ngIf="showDropdown">
+        <app-product-list-item *ngFor="let product of searchResults" [product]="product"></app-product-list-item>
+      </div>
+    </div>
+  </div>
+</header>

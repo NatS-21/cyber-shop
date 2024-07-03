@@ -1,0 +1,7 @@
+<div class="slider-container">
+  <div #track class="slider-track" [style.background]="getBackgroundStyle()"></div>
+  <input type="range" [min]="min" [max]="max" [(ngModel)]="valueMin" (input)="onMinSliderChange($event)" id="slider-1"
+         class="range-input">
+  <input type="range" [min]="min" [max]="max" [(ngModel)]="valueMax" (input)="onMaxSliderChange($event)" id="slider-2"
+         class="range-input">
+</div>

@@ -1,0 +1,70 @@
+<div class="home-screen">
+  <div class="banner">
+    <div class="banner-content">
+      <h2>Pro. Beyond.</h2>
+      <h1>IPhone 15 Pro Max</h1>
+      <p>Created to change everything for the better. For everyone</p>
+      <app-button (action)="openProduct(85)" size="large" type="secondary-light">Shop Now</app-button>
+    </div>
+    <img src="/assets/images/iPhone14Pro.png" alt="Banner">
+  </div>
+  <div class="subbanners-container">
+    <div class="banners-container-vertical">
+      <div class="banner-3">
+        <img src="/assets/images/PlayStation.png" alt="Banner">
+        <div class="banner-3-content">
+          <h2 class="secondary">Playstation 5</h2>
+          <p>Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.</p>
+        </div>
+      </div>
+      <div class="subbanners-container">
+        <div class="banner-4">
+          <img src="/assets/images/Headphone.png" alt="Banner">
+          <div class="banner-4-content">
+            <h2 class="secondary">Apple AirPods Max</h2>
+            <p>Computational audio. Listen, it's powerful</p>
+          </div>
+        </div>
+        <div class="banner-5">
+          <img src="/assets/images/Vision.png" alt="Banner">
+          <div class="banner-5-content">
+            <h2 class="secondary">Playstation 5</h2>
+            <p>Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-2">
+      <div class="banner-2-content">
+        <h2>Macbook Air</h2>
+        <p>The new 15‑inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.</p>
+        <app-button (action)="openProduct(96)" size="small" type="secondary-dark">Shop Now</app-button>
+      </div>
+      <img src="/assets/images/MacBook Pro 14.png" alt="Banner">
+    </div>
+  </div>
+
+  <div class="categories">
+    <h2>Browse By Category</h2>
+    <div class="category-list">
+      <app-category-card label="Phones" iconName="PhonesBlack" categoryId="2"></app-category-card>
+      <app-category-card label="Smart Watches" iconName="Smart WatchesBlack" categoryId="5"></app-category-card>
+      <app-category-card label="Tablets" iconName="CameraBlack" categoryId="4"></app-category-card>
+      <app-category-card label="Headphones" iconName="HeadphonesBlack" categoryId="6"></app-category-card>
+      <app-category-card label="Computers" iconName="ComputersBlack" categoryId="3"></app-category-card>
+      <app-category-card label="Accessories" iconName="GamingBlack" categoryId="1"></app-category-card>
+    </div>
+  </div>
+
+  <div class="products-section">
+    <div class="tab">
+      <button class="tab-link" (click)="openProductsTab(0)">New Arrivals</button>
+      <button class="tab-link" (click)="openProductsTab(1)">Bestsellers</button>
+      <button class="tab-link" (click)="openProductsTab(2)">Featured Products</button>
+    </div>
+
+    <div class="products-grid">
+      <app-product-card *ngFor="let product of selectedProducts" [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>

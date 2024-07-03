@@ -1,0 +1,16 @@
+<div class="price-filter-container">
+  <div class="inputs-container">
+    <div class="input-group min">
+      <label>From</label>
+      <app-input-field [(ngModel)]="valueMin" [placeholder]="'Min'" [type]="'number'" [minValue]="min" [maxValue]="max"
+                       [isSecure]="false" [buttonLabel]="''" (valueChange)="onMinValueChange($event)"></app-input-field>
+    </div>
+    <div class="input-group max">
+      <label>To</label>
+      <app-input-field [(ngModel)]="valueMax" [placeholder]="'Max'" [type]="'number'" [minValue]="min" [maxValue]="max"
+                       [isSecure]="false" [buttonLabel]="''" (valueChange)="onMaxValueChange($event)"></app-input-field>
+    </div>
+  </div>
+  <app-double-slider [min]="min" [max]="max" [(valueMin)]="valueMin" [(valueMax)]="valueMax"
+                     (valueMinChange)="onSliderMinChange($event)" (valueMaxChange)="onSliderMaxChange($event)"></app-double-slider>
+</div>

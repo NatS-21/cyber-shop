@@ -1,0 +1,7 @@
+<div class="search-container">
+  <div class="search-wrapper">
+    <img ngSrc="/assets/icons/Search.svg" alt="Search Icon" class="search-icon" height="24" width="24">
+    <input type="text" [placeholder]="placeholder" [(ngModel)]="searchTerm"
+           (ngModelChange)="onSearchTermChange($event)">
+  </div>
+</div>

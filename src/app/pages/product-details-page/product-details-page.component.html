@@ -1,0 +1,41 @@
+<div *ngIf="product" class="product-page-container">
+  <section class="product-details">
+    <app-product-library [images]="product.images"></app-product-library>
+    <div class="product-info">
+      <h1 class="secondary">{{ product.name }}</h1>
+      <div class="price">
+        <span class="current-price secondary">{{ product.price }}₽</span>
+        <span class="original-price secondary" *ngIf="product.discount_price">${{ product.discount_price }}</span>
+      </div>
+      <div class="characteristics">
+        <div *ngFor="let characteristic of product.characteristics">
+          <app-detail-card
+            [title]="characteristic.characteristic"
+            [value]="getCharacteristicValue(characteristic)"
+            iconName="Screen size"
+          ></app-detail-card>
+        </div>
+      </div>
+      <div class="controls">
+        <app-button size="large" type="secondary-dark" (click)="addToWishList()">Add to Wishlist</app-button>
+        <app-button size="large" type="primary" (click)="addToCart()">Add to Cart</app-button>
+      </div>
+      <div class="controls">
+        <app-shop-info-card iconName="Delivery" title="Free Delivery" value="1-2 day"></app-shop-info-card>
+        <app-shop-info-card iconName="Stock" title="In Stock" value="Today"></app-shop-info-card>
+        <app-shop-info-card iconName="Guaranteed" title="Guaranteed" value="1 year"></app-shop-info-card>
+      </div>
+    </div>
+  </section>
+  <section class="product-description-section">
+    <div class="product-description">
+      <h2 class="secondary">Details</h2>
+      <div *ngFor="let characteristic of product.characteristics">
+        <div class="char-info">
+          <span>{{ characteristic.characteristic }}</span>
+          <span>{{ getCharacteristicValue(characteristic) }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

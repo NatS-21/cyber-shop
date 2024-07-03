@@ -1,0 +1,22 @@
+.detail-card {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.details {
+  margin-left: 16px;
+}
+
+.title {
+  font-family: var(--font-family-primary), sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-dark-tertiary);
+}
+
+.value {
+  font-family: var(--font-family-primary), sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-dark-secondary);
+  margin-top: 4px;
+}

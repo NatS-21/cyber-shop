@@ -1,0 +1,17 @@
+<div class="filter-section">
+  <div class="header" (click)="toggleSection()">
+    <span class="secondary">{{ title }}</span>
+    <img [src]="isOpen ? '/assets/icons/ExpandUp.svg' : '/assets/icons/ExpandDown.svg'" alt="Toggle Icon"
+         class="toggle-icon" width="24px" height="24px">
+  </div>
+  <div *ngIf="isOpen" class="content">
+    <app-search-field [(searchTerm)]="searchQuery" placeholder="Search"></app-search-field>
+    <div class="category-list">
+      <app-category-check-box *ngFor="let category of filteredCategories"
+                              [label]="category.label"
+                              [count]="category.count"
+                              [checked]="category.selected"
+                              (action)="onCategoryToggle(category.label)"></app-category-check-box>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.category-checkbox {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+
+.details {
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+}
+
+.label {
+  font-family: 'Abel', sans-serif;
+  font-size: 1rem;
+  color: var(--color-dark-primary);
+  margin-right: 8px;
+}
+
+.count {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 0.75rem;
+  color: var(--color-dark-tertiary);
+}

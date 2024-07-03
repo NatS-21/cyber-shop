@@ -1,0 +1,4 @@
+<div class="slider-container">
+  <input type="range" [min]="min" [max]="max" [(ngModel)]="value" (input)="onSliderChange($event)"
+         [style.background]="getBackgroundStyle()">
+</div>

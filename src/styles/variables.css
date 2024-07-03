@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=ABeeZee:ital@1&display=swap');
+
+:root {
+  --font-family-primary: "Abel", sans-serif;
+  --font-family-secondary: "ABeeZee", sans-serif;
+
+  --color-light-primary: #ffffff;
+  --color-background: #f8f6f6;
+  --color-light-secondary: #f1f0f0;
+  --color-light-tertiary: #dad8d8;
+  --color-black: #000000;
+  --color-dark-primary: #1A1919;
+  --color-dark-secondary: #2E2E2E;
+  --color-dark-tertiary: #A7A7A7;
+
+  --color-error: #df2a2a;
+}
+
+@media (min-width: 768px) {
+  .secondary {
+    font-family: var(--font-family-secondary), sans-serif;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 767px) {
+  .secondary {
+    font-family: var(--font-family-primary), sans-serif;
+    font-style: normal;
+  }
+}

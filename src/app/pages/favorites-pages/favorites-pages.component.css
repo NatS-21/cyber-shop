@@ -1,0 +1,18 @@
+.favorites-section {
+  padding: 24px 20%;
+  background-color: var(--color-light-primary);
+}
+
+.favorites-section h1 {
+  margin-bottom: 16px;
+}
+
+.list-item {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .favorites-section {
+    padding: 24px;
+  }
+}

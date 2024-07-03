@@ -1,0 +1,4 @@
+<button [ngClass]="[type, size]" (click)="handleClick()" class="secondary">
+  <ng-content></ng-content>
+  <app-icon *ngIf="iconName" [iconName]="iconName!" [size]="size === 'small' ? 24 : 32"></app-icon>
+</button>

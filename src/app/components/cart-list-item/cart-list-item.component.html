@@ -1,0 +1,13 @@
+<div class="product-list-item">
+  <div class="info">
+    <img [src]="product.images[0]" alt="{{ product.name }}" class="product-image">
+    <h3>{{ product.name }}</h3>
+  </div>
+  <div class="quantity-controls">
+    <button (click)="decreaseQuantity()">–</button>
+    <input type="number" [value]="product.quantity" readonly>
+    <button (click)="increaseQuantity()">+</button>
+  </div>
+  <p class="price">{{ product.price }}₽</p>
+  <app-icon iconName="Close" size="32" (click)="removeFromCart()"></app-icon>
+</div>

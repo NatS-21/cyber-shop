@@ -1,0 +1,11 @@
+<div class="dropdown-container">
+  <div class="dropdown-header" (click)="toggleDropdown()">
+    <span>{{ selectedOption || placeholder }}</span>
+    <img ngSrc="assets/icons/Chevron Down.svg" alt="Dropdown Icon" class="dropdown-icon" height="32" width="32">
+  </div>
+  <ul *ngIf="isOpen" class="dropdown-list">
+    <li *ngFor="let option of options" (click)="selectOption(option)" class="dropdown-item">
+      {{ option }}
+    </li>
+  </ul>
+</div>

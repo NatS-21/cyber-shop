@@ -1,0 +1,27 @@
+<div class="shopping-cart">
+  <div class="product-list">
+    <h1>Shopping Cart</h1>
+    <div *ngFor="let product of cartItems">
+      <app-cart-list-item [product]="product"></app-cart-list-item>
+    </div>
+  </div>
+  <div class="order-summary">
+    <h2>Order Summary</h2>
+    <app-input-field label="Discount code / Promo code" placeholder="Code" size="large"></app-input-field>
+    <app-input-field label="Your bonus card number" placeholder="Enter Card Number" size="large"
+                     buttonLabel="Apply" (click)="applyDiscount()"></app-input-field>
+    <div class="price-line">
+      <span class="secondary">Subtotal:</span><span>${{ subtotal }}</span>
+    </div>
+    <div class="price-line">
+      <span>Estimated Tax:</span><span>${{ estimatedTax }}</span>
+    </div>
+    <div class="price-line">
+      <span>Estimated shipping & Handling:</span><span>${{ estimatedShipping }}</span>
+    </div>
+    <div class="price-line">
+      <span class="secondary">Total:</span><span>${{ getTotal() }}</span>
+    </div>
+    <app-button size="large" type="primary" (action)="checkout()">Checkout</app-button>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+button {
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+button.small {
+  height: 48px;
+  padding: 0 16px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+}
+
+button.large {
+  height: 56px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+button.primary {
+  background-color: var(--color-dark-primary);
+  color: var(--color-light-primary);
+}
+
+button.primary:hover {
+  background-color: var(--color-black);
+}
+
+button.secondary-dark {
+  background-color: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-dark-primary);
+}
+
+button.secondary-dark:hover {
+  background-color: var(--color-dark-primary);
+  color: var(--color-light-primary);
+}
+
+button.secondary-light {
+  color: var(--color-light-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-light-primary);
+}
+
+button.secondary-light:hover {
+  color: var(--color-black);
+  background-color: var(--color-light-primary);
+}
+
+button.settings {
+  background-color: var(--color-light-primary);
+  color: var(--color-dark-secondary);
+  border: 1px solid var(--color-dark-tertiary);
+}
+
+app-icon {
+  margin-left: 8px;
+}

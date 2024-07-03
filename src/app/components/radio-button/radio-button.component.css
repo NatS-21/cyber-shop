@@ -1,0 +1,25 @@
+.radio-button {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--color-dark-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 16px;
+}
+
+.radio-button.selected .inner-circle {
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.inner-circle {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-dark-primary);
+  border-radius: 50%;
+}

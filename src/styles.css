@@ -1,0 +1,10 @@
+@import './styles/normalize.css';
+@import './styles/variables.css';
+
+
+body {
+  font-family: var(--font-family-primary), sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+}

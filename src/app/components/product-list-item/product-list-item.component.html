@@ -1,0 +1,10 @@
+<div class="product-list-item">
+  <div class="info" (click)="buyProduct()">
+    <img [src]="product.images[0]" alt="{{ product.name }}" class="product-image">
+    <div class="product-info">
+      <h3>{{ product.name }}</h3>
+      <p class="price">{{ product.price }}₽</p>
+    </div>
+  </div>
+  <app-icon iconName="{{ isFavorite ? 'Liked' : 'Like' }}" size="32" (click)="toggleFavorite()"></app-icon>
+</div>
